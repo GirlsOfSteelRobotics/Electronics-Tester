@@ -1,0 +1,16 @@
+void draw_title(char *title);
+void add_back_button(short id);
+void remove_back_button(short id);
+void add_labeled_button(char *label, unsigned int landX, unsigned int landY, short id);
+void add_labeled_button(char *label1, char *label2, unsigned int landX, unsigned int landY, short id);
+void add_big_labeled_button(char *label, unsigned int landX, unsigned int landY, short id);
+void remove_labeled_button(short id);
+void add_label(char *label, unsigned int landX, unsigned int landY);
+void add_small_label(char *label, unsigned int landX, unsigned int landY);
+void add_small_label(char *label, unsigned int landX, unsigned int landY, unsigned int fgcolor, unsigned int bgcolor);
+void add_big_label(char *label, unsigned int landX, unsigned int landY);
+void remove_label(char *label, unsigned int landX, unsigned int landY);
+void remove_big_label(char *label, unsigned int landX, unsigned int landY);
+void remove_small_label(char *label, unsigned int landX, unsigned int landY);
+void draw_circle(unsigned int landX, unsigned int landY, unsigned int color);
+char *num_to_string(int value, int length);
