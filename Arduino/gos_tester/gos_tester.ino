@@ -119,6 +119,13 @@ void loop(void)
 	}
 	currScreen = loop_encoder();
 	break;
+    case SCR_LIDAR:
+	if (currScreen != prevScreen) {
+	    draw_lidar();
+	    prevScreen = currScreen;
+	}
+	currScreen = loop_lidar();
+	break;
     case SCR_MOTOR:
 	if (currScreen != prevScreen) {
 	    draw_motor();

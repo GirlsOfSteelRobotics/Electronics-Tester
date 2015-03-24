@@ -14,6 +14,7 @@ enum ScreenState {
 	SCR_LIMITSW,
 	SCR_HALLEFFECT,
 	SCR_ENCODER,
+        SCR_LIDAR,
       SCR_MOTOR,
         SCR_JAGUAR,
         SCR_SPIKE,
@@ -41,6 +42,7 @@ enum ButtonIds {
   BTN_LIMITSW,
   BTN_HALLEFFECT,
   BTN_ENCODER,
+  BTN_LIDAR,
   BTN_JAGUAR,
   BTN_SPIKE,
   BTN_VICTOR,
@@ -75,6 +77,8 @@ void draw_halleffect();
 enum ScreenState loop_halleffect();
 void draw_encoder();
 enum ScreenState loop_encoder();
+void draw_lidar();
+enum ScreenState loop_lidar();
 void draw_motor();
 enum ScreenState loop_motor();
 void draw_jaguar();

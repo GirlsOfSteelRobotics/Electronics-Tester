@@ -637,7 +637,7 @@ void TFT::drawString(char *string, unsigned int poX, unsigned int poY, unsigned 
     unsigned char ascii;
     unsigned int topLeftX, topLeftY, botRightX, botRightY;
 
-    prog_uchar *raster = _font->raster;
+    unsigned char *raster = _font->raster;
     unsigned char bytesPerRow = _font->cols/8;
     unsigned char bytesPerChar = _font->rows * bytesPerRow;
 
@@ -706,8 +706,8 @@ void TFT::drawString(char *string, unsigned int poX, unsigned int poY, unsigned 
 		    ascii = _font->unknownChar;
 		}
 		for (unsigned char bytenum=0; bytenum < bytesPerRow; bytenum++) {
-		    //prog_uchar temp = pgm_read_byte(&bigFontRaster[ascii-0x20][line*2 + bytenum]);
-		    prog_uchar temp = pgm_read_byte(raster+(ascii-_font->minChar)*bytesPerChar+(line*bytesPerRow + bytenum));
+		    //unsigned char temp = pgm_read_byte(&bigFontRaster[ascii-0x20][line*2 + bytenum]);
+		    unsigned char temp = pgm_read_byte(raster+(ascii-_font->minChar)*bytesPerChar+(line*bytesPerRow + bytenum));
 		    for(unsigned char bit=0;bit<8;bit++) {
 			for(unsigned char repeatBits=0; repeatBits<scale; repeatBits++) {
 			    if((temp<<bit)&0x80) {

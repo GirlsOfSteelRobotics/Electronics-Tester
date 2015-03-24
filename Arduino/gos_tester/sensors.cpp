@@ -19,6 +19,8 @@ draw_sensors() {
 		       "Effect ", 192,60,  BTN_HALLEFFECT);
     add_labeled_button("Encoder", 
 		       "       ", 192,120, BTN_ENCODER);
+    add_labeled_button("LIDAR  ", 
+		       "Dist.  ", 192,180, BTN_LIDAR);
 }
 
 enum ScreenState
@@ -38,6 +40,7 @@ loop_sensors() {
     remove_labeled_button(BTN_LIMITSW);
     remove_labeled_button(BTN_HALLEFFECT);
     remove_labeled_button(BTN_ENCODER);
+    remove_labeled_button(BTN_LIDAR);
 
     // Jump to the appropriate screen depending on the button pressed
     switch (button) {
@@ -53,6 +56,8 @@ loop_sensors() {
       return SCR_HALLEFFECT;
     case BTN_ENCODER:
       return SCR_ENCODER;
+    case BTN_LIDAR:
+      return SCR_LIDAR;
     default:
       /* NOT REACHED */
       return SCR_START;

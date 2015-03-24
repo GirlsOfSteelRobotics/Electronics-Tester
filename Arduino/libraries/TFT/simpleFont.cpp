@@ -8,7 +8,7 @@
 #include <avr/pgmspace.h>
 #include "TFT.h"
 
-const prog_uchar simpleFontRaster[][8] PROGMEM = 
+const unsigned char simpleFontRaster[][8] PROGMEM = 
 {
   {0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,},
   {0x20,0x20,0x20,0x20,0x20,0x00,0x20,0x00,},
@@ -114,5 +114,5 @@ fontInfo simpleFont = {
     0x20, //minChar (space)
     0x7F, //maxChar (delete)
     '?',  //unknownChar (question mark)
-    (prog_uchar *)&simpleFontRaster, //raster
+    (unsigned char *)&simpleFontRaster, //raster
 };

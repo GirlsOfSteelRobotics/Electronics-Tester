@@ -79,7 +79,7 @@ struct fontInfo {
     unsigned char minChar;
     unsigned char maxChar;
     unsigned char unknownChar;
-    prog_uchar *raster;
+    unsigned char *raster;
 };
 
 extern fontInfo simpleFont;

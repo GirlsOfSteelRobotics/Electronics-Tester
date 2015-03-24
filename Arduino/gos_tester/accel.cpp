@@ -184,7 +184,7 @@ label_xyz(bool drawMe)
 /*
  * Draw or remove the "Accel Not Found" message
  * If removing, clear the entire scren width so the
- * same function can also erase the X, Y, Z numberic values.
+ * same function can also erase the X, Y, Z numeric values.
  */
 void
 label_notfound(bool drawMe)
