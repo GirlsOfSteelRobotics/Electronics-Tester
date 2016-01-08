@@ -23,15 +23,15 @@ write_register_lidar(byte regNum, byte value)
     // Send the register number we want to read
     Wire.beginTransmission(ADDR);
     if (Wire.write(regNum) != 1) {
-	//Serial.println("Failed to write register number!");
+	Serial.println("Failed to write register number!");
 	return false;
     }
     if (Wire.write(value) != 1) {
-	//Serial.println("Failed to write register value!");
+	Serial.println("Failed to write register value!");
 	return false;
     }
     if (Wire.endTransmission(ADDR) != 0) {
-	//Serial.println("Failed to end transmission!");
+	Serial.println("Failed to end transmission!");
 	return false;
     }
     return true;
@@ -48,11 +48,11 @@ read_wide_register(byte regNum, int *value)
     // Send the register number we want to read
     Wire.beginTransmission(ADDR);
     if (Wire.write(regNum) != 1) {
-	//Serial.println("Failed to write register number!");
+	Serial.println("Failed to write register number 2!");
 	return false;
     }
     if (Wire.endTransmission(ADDR) != 0) {
-	//Serial.println("Failed to end transmission!");
+	Serial.println("Failed to end transmission 2!");
 	return false;
     }
     // Now read two bytes
@@ -61,7 +61,7 @@ read_wide_register(byte regNum, int *value)
 	if (++attempts > MAX_READS) {
 	    return false;
 	}
-	//Serial.println("Delaying: none available");
+	Serial.println("Delaying: none available");
 	delay(2);
     }
     // Read most significant byte first, shifting it up to the high byte
@@ -126,8 +126,8 @@ void update_screen_lidar(void)
         label_error(true);
     } else {
         if (read_wide_register(DATA_REG_NUM, &cm)) {
-	    //Serial.print("cm: ");
-	    //Serial.print(cm);
+	    Serial.print("cm: ");
+	    Serial.print(cm);
             in = cm / 2.54;
 	    label_values(cm, in);
 	} else {
